@@ -1,0 +1,24 @@
+.search-country {
+    padding: 10px 20px;
+}
+
+.about-country {
+  color: rgb(8, 8, 8);
+  font-weight: 800;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.flag {
+  width: 400px;
+  margin-left: 30px;
+}
+
+.one-country {
+  display: flex;
+}
+
+.few-countries {
+  font-weight: 800;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
