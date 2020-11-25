@@ -2884,7 +2884,7 @@ var refs = {
   countriesContainer: document.querySelector(".flexmarkup"),
   searchInput: document.querySelector(".search-country")
 };
-refs.searchInput.addEventListener("input", debounce(onSearch, 3000));
+refs.searchInput.addEventListener("input", debounce(onSearch, 500));
 
 function onSearch(event) {
   event.preventDefault();
@@ -2959,7 +2959,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54259" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54426" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
