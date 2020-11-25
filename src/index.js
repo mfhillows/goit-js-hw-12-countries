@@ -12,7 +12,7 @@ const refs = {
   searchInput: document.querySelector(".search-country"),
 };
 
-refs.searchInput.addEventListener("input", debounce(onSearch, 3000));
+refs.searchInput.addEventListener("input", debounce(onSearch, 500));
 
 function onSearch(event) {
   event.preventDefault();
