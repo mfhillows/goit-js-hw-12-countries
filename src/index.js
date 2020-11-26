@@ -17,11 +17,12 @@ refs.searchInput.addEventListener("input", debounce(onSearch, 500));
 function onSearch(event) {
   event.preventDefault();
   clearMarckup();
-  const searchQuery = event.target.value;
+  const searchQuery = event.target.value.trim();
+  if (searchQuery.length === 0) {
+    return;
+  }
 
-  fetchCountries(searchQuery)
-    .then(variablesMarkup)
-    .catch(pushError("Something wrong"));
+  fetchCountries(searchQuery).then(variablesMarkup).catch(pushError);
 }
 
 function variablesMarkup(data) {
@@ -53,9 +54,10 @@ function pushErrorToMuch() {
   });
 }
 
-function pushError(text) {
-  console.log(text);
+function pushError(error) {
+  console.log("Something wrong");
 }
+
 
 function clearMarckup() {
   refs.countriesContainer.innerHTML = "";
