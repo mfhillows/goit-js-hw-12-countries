@@ -2889,8 +2889,13 @@ refs.searchInput.addEventListener("input", debounce(onSearch, 500));
 function onSearch(event) {
   event.preventDefault();
   clearMarckup();
-  var searchQuery = event.target.value;
-  (0, _fetchCountries.default)(searchQuery).then(variablesMarkup).catch(pushError("Something wrong"));
+  var searchQuery = event.target.value.trim();
+
+  if (searchQuery.length === 0) {
+    return;
+  }
+
+  (0, _fetchCountries.default)(searchQuery).then(variablesMarkup).catch(pushError);
 }
 
 function variablesMarkup(data) {
@@ -2924,8 +2929,8 @@ function pushErrorToMuch() {
   });
 }
 
-function pushError(text) {
-  console.log(text);
+function pushError(error) {
+  console.log("Something wrong");
 }
 
 function clearMarckup() {
@@ -2959,7 +2964,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54426" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55430" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
